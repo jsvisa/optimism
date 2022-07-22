@@ -58,6 +58,7 @@ const config: HardhatUserConfig = {
       default: 0,
     },
   },
+  // TODO: Update this to include 1lStartingBlockTag (or hash, but sometimes use "earliest")
   deployConfigSpec: {
     submissionInterval: {
       type: 'number',
@@ -72,18 +73,15 @@ const config: HardhatUserConfig = {
     historicalBlocks: {
       type: 'number',
     },
-    startingBlockNumber: {
-      type: 'number',
-    },
-    startingTimestamp: {
-      type: 'number',
-    },
     sequencerAddress: {
       type: 'address',
     },
     outputOracleOwner: {
       type: 'address',
     },
+    l1StartingBlockHash: {
+      type: 'string'
+    }
   },
   external: {
     contracts: [
