@@ -371,6 +371,7 @@ contract Deploy is Deployer {
         DeployImplementations di = new DeployImplementations();
         (DeployImplementationsInput dii, DeployImplementationsOutput dio) = di.etchIOContracts();
 
+        dii.set(dii.salt.selector, _implSalt());
         dii.set(dii.withdrawalDelaySeconds.selector, cfg.faultGameWithdrawalDelay());
         dii.set(dii.minProposalSizeBytes.selector, cfg.preimageOracleMinProposalSize());
         dii.set(dii.challengePeriodSeconds.selector, cfg.preimageOracleChallengePeriod());
